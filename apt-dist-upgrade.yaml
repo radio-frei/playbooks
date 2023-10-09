@@ -1,0 +1,12 @@
+---
+- name: Suche und installiere Paketaktualisierungen
+  hosts: all
+  become: true
+  tasks:
+    - name: Suche Paketaktualisierungen
+      apt:
+        update_cache: yes
+
+    - name: Installiere Paketaktualisierungen
+      apt:
+        upgrade: dist
